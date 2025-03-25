@@ -1,14 +1,16 @@
 export const PokemonListItem = (
     {
+        code,
         name,
         url,
-        img = 'https://picsum.photos/id/2/48/48',
+        imgSprite = 'https://picsum.photos/id/2/48/48',
         onClickHandler = (e)=>{alert('Clicked');}
     }
 )=>{
+    // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png
     return (
         <div className="pokemonListItem">
-            <img src={img} alt={name}/>
+            <img src={imgSprite} alt={name}/>
             <div>
                 <strong>
                     {name}

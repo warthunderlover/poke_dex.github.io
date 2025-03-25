@@ -1,3 +1,4 @@
+import { getPokemonImg } from "../../services/pockemonapi";
 import { PokemonListItem } from "./PokemonListItem";
 
 export const PokemonList = (
@@ -16,6 +17,7 @@ export const PokemonList = (
                             key={item.name}
                             name={item.name}
                             url={item.url}
+                            {...getPokemonImg(item.url)}
                         />
                     )
                 }
