@@ -1,6 +1,6 @@
 import { NavBar } from "./Navbar"
 
-export const Page = ( {title, children } )=>{
+export const Page = ( {title, children} )=>{
     return (
         <>
             <header className="bg-black text-white py-2 px-4">

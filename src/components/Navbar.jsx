@@ -1,15 +1,16 @@
+import { NavLink } from 'react-router';
 export const NavBar = () => {
     return (
         <nav className="navigation">
             <ul>
                 <li>
-                    <a>Dashboard</a>
+                    <NavLink to="/">Dashboard</NavLink>
                 </li>
                 <li>
-                    <a>My Collection</a>
+                    <NavLink to="/my-collection">My Collection</NavLink>
                 </li>
                 <li>
-                    <a>About</a>
+                    <NavLink to="/about">About</NavLink>
                 </li>
             </ul>
         </nav>
