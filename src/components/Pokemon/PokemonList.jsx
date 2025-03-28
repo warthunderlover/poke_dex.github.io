@@ -4,8 +4,7 @@ import { PokemonListItem } from "./PokemonListItem";
 export const PokemonList = (
     {
         pokemonList,
-        nextHandler,
-        previousHandler
+        clickHandler = (code)=>{}
     }
 )=>{
     return (
@@ -18,6 +17,7 @@ export const PokemonList = (
                             name={item.name}
                             url={item.url}
                             {...getPokemonImg(item.url)}
+                            onClickHandler={clickHandler}
                         />
                     )
                 }
