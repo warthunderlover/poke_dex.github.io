@@ -18,10 +18,12 @@ export const DashboardPage = () => {
     }
     return (
         <section>
-            <PokemonList
+                
+            < PokemonList
                 pokemonList={pokemons.results}
                 clickHandler={viewPokemonDetail}
             />
+            
             <Paging
                 totalElements={pokemons.count}
                 limit={limit}

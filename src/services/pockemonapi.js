@@ -43,7 +43,20 @@ export const usePokemonDetail = (code) => {
                     })
                 .then(
                     (data) => {
-                        setPokemonData(data);
+                        if (data) {
+                            // Solo guardar la información esencial
+                            const esencialData = {
+                                id: data.id,
+                                nombre: data.name,
+                                peso: data.weight,
+                                habilidades: data.abilities,
+                                sprites: {
+                                    frontal: data.sprites.front_default,
+                                    trasera: data.sprites.back_default
+                                }
+                            };
+                            setPokemonData(esencialData);
+                        }
                     }
                 )
                 .catch(
