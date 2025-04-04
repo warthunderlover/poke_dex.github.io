@@ -33,16 +33,16 @@ jobs:
         run: npm install
       - name: Verificar Variables de Ambiente
         run : echo "DEPLOY_BASE_URL $DEPLOY_BASE_URL"
-      - name: Build and Deploy
-        uses: bitovi/github-actions-react-to-github-pages@v1.2.4
-      #- name: Compilar Proyecto
-      #  run: npm run build
-      #- name: Configurar Github Pages
-      #  uses: actions/configure-pages@v5
-      #- name: Subir Compilado a Github Pages
-      #  uses: actions/upload-pages-artifact@v3
-      #  with:
-      #    path: './dist'
-      #- name: Publicar Página en Github Pages
-      #  id: deployment
-      #  uses: actions/deploy-pages@v4
+      - name: Compilar Proyecto
+        run: npm run build
+      - name: Generar 404 html
+        run: cp ./dist/index.html ./dist/404.html
+      - name: Configurar Github Pages
+        uses: actions/configure-pages@v5
+      - name: Subir Compilado a Github Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+      - name: Publicar Página en Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
