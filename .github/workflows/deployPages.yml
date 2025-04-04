@@ -40,9 +40,6 @@ jobs:
       - name: Verificar Variables de Ambiente
         run: echo "DEPLOY_BASE_URL=${DEPLOY_BASE_URL}"
 
-      - name: Configurar Base en vite.config.js
-        run: echo "export default { base: '${DEPLOY_BASE_URL}' }" > vite.config.js
-
       - name: Compilar Proyecto
         run: npm run build
 
