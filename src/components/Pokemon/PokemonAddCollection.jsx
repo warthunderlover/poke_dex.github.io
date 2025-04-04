@@ -3,7 +3,10 @@ import {Link} from 'react-router';
 
 export const PokemonAddCollection = (
     {
-        Pokecod
+        Pokecod,
+        name,
+        url,
+        imgSprite
     }
 )=>{
     const [pokeCollection, saveToPokeCollection] = useLocalStorage("mycollection", []);
@@ -15,7 +18,9 @@ export const PokemonAddCollection = (
 
     const onClickHandler = (e)=>{
         const newPokeItem = {
-            code: Pokecod
+            code: Pokecod,
+            name: name,
+            url:`https://pokeapi.co/api/v2/pokemon/${Pokecod}/`,
         }
         saveToPokeCollection([...pokeCollection, newPokeItem]);
     }

@@ -20,7 +20,12 @@ export const Details = () => {
                 <img src={pokemonData.sprites.back_default} />
             </section>
             <section>
-                <PokemonAddCollection Pokecod={pokeid} />
+                <PokemonAddCollection
+                    Pokecod={pokeid}
+                    imgSprite={pokemonData.sprites.front_default}
+                    name={pokemonData.name}
+                    url=''
+                />
             </section>
             <pre>
                 {JSON.stringify(pokemonData, null, 2)}
