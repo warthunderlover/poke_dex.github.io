@@ -9,8 +9,8 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes >
+    <BrowserRouter basename={import.meta.env.BASE_URL ?? '/'}>
+      <Routes  >
         <Route element={<Layout />}>
           <Route index element={<DashboardPage/>} />
           <Route path="my-collection" element={<MyCollection/>} />
