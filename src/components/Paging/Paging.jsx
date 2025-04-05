@@ -16,15 +16,19 @@ export const Paging = (
     , [page, pageInput]);
     return (
         <section className="pagingHolder">
-            <section className="pagingParameters">
-                <select value={limit} onChange={(e) => onLimitChange(e.target.value)}>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>
-            </section>
-            <section className="pagingInfo">
+            
+            <section className="pagingNavigator">
+                <button
+                    onClick={() => {
+                        if (page > 1) {
+                            onPageChange(page - 1)
+                        }
+                    }
+                }
+                >Anterior</button>
+                </section>
+                <section className="pagingInfo">
+                
                 <span>
                     Mostrando Página
                     <input
@@ -41,15 +45,7 @@ export const Paging = (
                     de Total {totalPages}
                 </span>
             </section>
-            <section className="pagingNavigator">
-                <button
-                    onClick={() => {
-                        if (page > 1) {
-                            onPageChange(page - 1)
-                        }
-                    }
-                }
-                >Anterior</button>
+                <section className="pagingNavigator">
                 <button
                     onClick={() => {
                         if (page < totalPages) {
@@ -59,6 +55,15 @@ export const Paging = (
                 }
                 >Siguiente</button>
             </section>
-        </section>
+            
+            <section className="pagingParameters">
+                <select value={limit} onChange={(e) => onLimitChange(e.target.value)}>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </section>
+        </section>  
     );
 }
