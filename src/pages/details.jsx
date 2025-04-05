@@ -16,18 +16,24 @@ export const Details = () => {
     
     return (
         <section className="flex flex-col items-center justify-center text-center my-5">
-            <h1 className="bg-red-500 px-4 py-2 rounded items-center text-white w-3xs">{pokemonData.nombre}</h1>
-            <section className="">
-                <img src={pokemonData.sprites.frontal} alt={`Vista frontal de ${pokemonData.nombre}`} />
-                <img src={pokemonData.sprites.trasera} alt={`Vista trasera de ${pokemonData.nombre}`} />
-            </section>
-            <section className="bg-red-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-white hover:text-black active:scale-95 transition duration-300"> 
+
+            <div className="flex flex-col outline outline-red-500 outline-20  items-center justify-center text-center   rounded-4xl my-5 w-xs">
+
+                <h1 className="font-extrabold bg-red-500 text-3xl text-white  py-2 items-center  w-full">        {pokemonData.nombre}</h1>
+                <section className="my-4">
+                    <img src={pokemonData.sprites.frontal} alt={`Vista frontal de ${pokemonData.nombre}`} />
+                    <img src={pokemonData.sprites.trasera} alt={`Vista trasera de ${pokemonData.nombre}`} />
+                </section>
+                
+            </div>
+            <section className="bg-red-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-white hover:text-black active:scale-95 transition duration-300 my-4"> 
                 <PokemonAddCollection 
                     Pokecod={pokeid}
                     imgSprite={pokemonData.sprites.frontal}
                     name={pokemonData.nombre}
                     url=''
                 />
+
             </section>
             <section className="mt-6 w-full max-w-md bg-gray-100 rounded-lg p-4 text-left shadow-xl  shadow-gray-400 my-5">
                 <h2 className="text-xl font-bold mb-4 text-center">Información del Pokémon</h2>
