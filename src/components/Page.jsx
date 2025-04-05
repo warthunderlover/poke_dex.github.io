@@ -1,5 +1,5 @@
 import { NavBar } from "./Navbar";
-import { Footer_} from "./footer";
+import { Footer_} from "./Footer";
 
 export const Page = ( {title, children} )=>{
     return (
