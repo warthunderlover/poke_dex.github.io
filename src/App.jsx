@@ -9,7 +9,7 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL ?? '/'}>
+    <BrowserRouter basename={'/poke_dex.io/'}>
       <Routes  >
         <Route element={<Layout />}>
           <Route index element={<DashboardPage/>} />
