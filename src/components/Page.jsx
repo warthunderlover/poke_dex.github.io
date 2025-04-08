@@ -1,5 +1,5 @@
 import { NavBar } from "./Navbar";
-import { Footer_} from "./Footer";
+import { Footer} from "./Footer";
 
 export const Page = ( {title, children} )=>{
     return (
@@ -12,7 +12,7 @@ export const Page = ( {title, children} )=>{
                  {children}
             </main>
             
-                <Footer_/>
+                <Footer/>
             
         </>
     )
